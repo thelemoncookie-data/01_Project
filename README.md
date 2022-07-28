@@ -78,13 +78,15 @@ A small grocery store chain operating locations between 1985 - 2009 are seeking 
 > This visual is after automating the depth ranges of the regression tree model in order to find the most optimal depth. It exhibits that depth five will give us the best R^2 test result. We will be modifying the next regression model based on this result. 
 
 ## Evaluation:
-Once both Linear Regression and Regression Tree models were run, the metrics used to determine their accuracy and realtionship were Root Squared Mean Error (RMSE) and R-Squared (R^2)
+<img src="images/metrics.png">
 
-Based on the regression metrics of both models, it's clear that once we addressed the overfitting issue on the Decision Tree training data, the model performed better by roughtly 45%.
+-   Once both Linear Regression and Regression Tree models were run, the metrics used to determine their accuracy and realtionship were Root Squared Mean Error (RMSE) and R-Squared (R^2)
 
-The implementation of both these models suggest that with some tuning, the Regression Tree performed slightly better than the linear regression model. The R^2 on the Regression Tree suggests that 59% of the target can be realted back to our features data.
+-   Based on the regression metrics of both models, it's clear that once we addressed the overfitting issue on the Decision Tree training data, the model performed better by roughtly 45%.
 
-In conclusion, out of the two machine learning models created, the Regression Tree would be the more ideal choice in this scenario.
+-   The implementation of both these models suggest that with some tuning, the Regression Tree performed slightly better than the linear regression model. The R^2 on the Regression Tree suggests that 59% of the target can be realted back to our features data.
+
+-   In conclusion, out of the two machine learning models created, the Regression Tree would be the more ideal choice in this scenario.
 
 ## Recommendations:
 
