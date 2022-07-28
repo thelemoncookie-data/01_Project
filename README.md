@@ -1,9 +1,9 @@
 # Grocery Store Sales Precictions
 
-<img src="https://github.com/thelemoncookie-data/01_Project/blob/main/Sales_pred_image.png">
+<img src="images/sales_pred_image.png">
 
 # Objective
-## Build and find the best Machine Learning model to predict future sales.
+## Build and find the most optimal Machine Learning model to predict future sales for Big Mart.
 
 **Author**: 
 Darlene Phan
@@ -13,6 +13,8 @@ Darlene Phan
 A small grocery store chain operating locations between 1985 - 2009 are seeking future sales predictions.
 
 ### Data
+- Source: 
+    - https://datahack.analyticsvidhya.com/contest/practice-problem-big-mart-sales-iii/
 #### Data Dictionary:
 | Variable Name      | Description                                                                                       |
 | ------------------ | ------------------------------------------------------------------------------------------------- |
@@ -32,14 +34,6 @@ A small grocery store chain operating locations between 1985 - 2009 are seeking 
 #### **Target:**
 - Item Sales    
 #### **Features:**
-<!--     - Item Fat Content
-    - Item Visibility
-    - Item Type
-    - MRP
-    - Location Type
-    - Outlet Type
- -->
-
    - Item Fat Content
    - Item Visibility
    - Item Type
@@ -48,45 +42,77 @@ A small grocery store chain operating locations between 1985 - 2009 are seeking 
    - Outlet Type
 
 ## Methods
-- Data preparation steps with explanation and justification for choices
-- 
-
+- The columns that had missing data accounted between 17% - 28% within their respective columns. These columns were dropped, since they could not contribute much in predicting the item sales. 
+- Columns within the features matrix were either categorical or numerical. After addressing inconsistencies within the categorical columns they were processed using OneHotEncoder to prep for machine learning. Numerical data was scaled. 
+- Visualizations were used for data exploration to identify any correlation (if any) between variables, recognize outliers, display under performing stores, overall item sales, and item sale distribution. 
+- 2 Machine Learning models to identify most optimal item sales projections
+    -   Regresssion Tree
+    -   Linear Regression
 ## Results
 
-### Here are examples of how to embed images from your sub-folder
-
-
-#### Visual 1 Title
-
-![outlet_type_hist](outlet_type_hist.png)
-
-![item_sales_product_type](item_sales_product_type.png)
+### Data Exploration Visualizations
+<img src="images/outlet_type_hist.png">
 
 
 
-> Sentence about visualization.
 
-#### Visual 2 Title
+> This histogram displays the of Sales Distribution by Outlet type. It allows us to visually compare the sales of the outlet types to the overall sales. 
+
+
+<img src="images/item_sales_product_type.png">
+
+
+
+> This bar chart clearly displays the lowest to highest sale items grouped by product type. This allows us to understand what makes up the majority of our sales and places a magnifying glass on the areas that do not perform as well. 
+
 
 ## Model
 
-Describe your final model
+### Hypertuning Regression Tree
+<img src="images/regression_tree.png">
 
-Report the most important metrics
 
-Refer to the metrics to describe how well the model would solve the business problem
+
+> The final model is a regression tree. Tree based models have a tendency to overfit(high variance) to the training data. This will result in underfitting(high bias) on the testing data. Therefore, in order to create a model that will better predict on new data, we would have to tune the model. Essentially finding the sweet spot that has both a low variance and a low bias. 
+
+> This visual is after automating the depth ranges of the regression tree model in order to find the most optimal depth. It exhibits that depth five will give us the best R^2 test result. We will be modifying the next regression model based on this result. 
+
+## Evaluation:
+Once both Linear Regression and Regression Tree models were run, the metrics used to determine their accuracy and realtionship were Root Squared Mean Error (RMSE) and R-Squared (R^2)
+
+Based on the regression metrics of both models, it's clear that once we addressed the overfitting issue on the Decision Tree training data, the model performed better by roughtly 45%.
+
+The implementation of both these models suggest that with some tuning, the Regression Tree performed slightly better than the linear regression model. The R^2 on the Regression Tree suggests that 59% of the target can be realted back to our features data.
+
+In conclusion, out of the two machine learning models created, the Regression Tree would be the more ideal choice in this scenario.
 
 ## Recommendations:
 
-More of your own text here
+As a veteran of the Hospitality and Food Service industry, based on my experience, I would recommend an additional analysis on the business. In order to do this, it woul require more detailed data from the individual store to understand those key points. 
 
+Since the R^2 score of both models sit below 59%, it tells us that less than 59% of the target predictions(sales) can be explained by our features matrix. 
 
 ## Limitations & Next Steps
 
-More of your own text here
+-   Based on the dataset given, there are massive limitations to determine growth within the business. 
+- These would be my next steps in terms of more data collection:
+    -   Monthly or quarterly sales data
+    -   Customer purchasing data (Customer averages)
+    -   Locations of stores. City or suburb? Are they highly densely populated areas?
+    -   Peek Hours of operations
+    
+-   Questions to consider when determining data collection:
+    -   Who are my potential customers?
+    -   Who are my competitors?       
+    -   What are my lowest performing items? Why?
+    -   What are my customers asking for?
+
+In summary, there is a lot more we could explore here. A thing to note, just because two of the stores (Out 19 and Out 10) had lower sales, doesn't necessarily mean they performed poorly. If there was more data, it could potentially show that these stores are performing well. 
+
+Maybe these two locations are not in highly populated areas but perform higher than the competition. They have less customers, smaller store and have higher customer sales average. 
 
 
 ### For further information
 
 
-For any additional questions, please contact **email**
+For any additional questions, please contact **thelemoncookie.data@gmail.com**
