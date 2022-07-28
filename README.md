@@ -57,7 +57,12 @@ A small grocery store chain operating locations between 1985 - 2009 are seeking 
 
 
 #### Visual 1 Title
-![sample image](project1_sample_image.png)
+
+![outlet_type_hist](outlet_type_hist.png)
+
+![item_sales_product_type](item_sales_product_type.png)
+
+
 
 > Sentence about visualization.
 
